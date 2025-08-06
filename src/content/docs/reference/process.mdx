@@ -1,0 +1,22 @@
+---
+title: Test procedure
+description: Explanation of test results
+---
+
+
+import { Aside } from '@astrojs/starlight/components';
+
+<Aside type="tip">
+Here we explain why the test suite is never 100 % successful.
+</Aside>
+
+When we build the Docker image for a given version of code_aster, we use a specific configuration:
+
+- Sequential and multithreaded version, but no MPI support
+- Integration of METIS, SCOTCH, MUMPS, and MFront
+
+This is a **deliberately incomplete** version of code_aster, but it includes about **90%** of the core features.
+
+We then run the entire official code_aster test suite on this image. This test suite includes cases that rely on dependencies not included in the image (e.g., MISS3D, HOMARD), as well as cases requiring external data that are not available in open source. **That’s why the full test suite cannot pass 100%.**
+
+For the sake of transparency, we provide the full list of failed tests for each built version of code_aster.

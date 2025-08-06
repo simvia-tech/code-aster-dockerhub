@@ -1,0 +1,38 @@
+---
+title: Install
+description: A guide to easily install code_aster docker images.
+---
+
+import { Steps } from '@astrojs/starlight/components';
+
+## Basic setup 
+
+<Steps>
+
+1. Install Docker on your system. You can find the installation instructions for your operating system on the [Docker website](https://docs.docker.com/get-docker/).
+2. Pull the code_aster docker image from the Docker Hub repository. You can do this by running the following command in your terminal:
+   ```bash
+   docker pull simvia/code_aster:latest
+   ```
+3. Once the image is pulled, you can run it using the following command:
+   ```bash
+   docker run -it --rm simvia/code_aster:latest
+   ```
+   This command will start a new container from the code_aster image and open an interactive terminal session. The `--rm` flag ensures that the container is removed after you exit the session,
+   keeping your system clean.
+4. You can now use code_aster within the Docker container. For example, you can run a simple command to check the version of code_aster:
+   ```bash
+   run_aster --version
+   ```  
+
+</Steps>
+
+## Advandced setup : mounting a local directory
+
+If you want to work with files on your local machine, you can mount a local directory into the Docker container. This allows you to access and modify files directly from your host system.
+To do this, you can use the `-v` option with the `docker run` command. Here's an example:
+
+```bash
+docker run -it --rm -v /path/to/local/directory:/home/user/data simvia/code_aster:latest
+```
+In this command, replace `/path/to/local/directory` with the path to the directory on your local machine that you want to mount. The `/home/user/data` path is where the directory will be accessible inside the Docker container. You can then read and write files in this directory as if they were part of the container's filesystem.

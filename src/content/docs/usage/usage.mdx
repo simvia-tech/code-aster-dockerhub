@@ -1,0 +1,56 @@
+---
+title: Usage 
+description: A guide to easily use code_aster docker images.
+---
+
+import { FileTree } from '@astrojs/starlight/components';
+import { Aside } from '@astrojs/starlight/components';
+
+
+
+## Filesystem and working directory
+
+When you run a code_aster docker image, it is important to understand how the filesystem works. The Docker container has its own filesystem, which is isolated from your host system. However, you can mount a local directory into the Docker container to access files on your host system.
+
+The main points of the docker filesystem are:
+
+<FileTree>
+- home
+  - user/
+- opt
+  - activate.sh 
+  - codeaster/
+    - bin/
+    - lib/ 
+    - include/
+    - share/
+</FileTree>
+
+
+<Aside type="tip">
+To mount a local directory into the container, we recommend not mounting it directly as /home/user, as this would clutter your filesystem with files like .config, .local, .cache, etc.
+Instead, we suggest mounting it into a subdirectory, such as /home/user/data.
+</Aside>
+  
+## Transparent usage of code_aster docker images
+
+This section provides tips and tricks to use code_aster docker images. It is intended to help users get started quickly and efficiently with the code_aster docker images.
+
+To hide the docker usage, you can define the following function in your `.bashrc` or `.zshrc` file:
+
+```bash
+function run_aster() {
+    docker run --rm -it \
+        -v "$(pwd)":/home/user/data \
+        -w /home/user/data \
+       code_aster:17.2 \
+        bash -i -c 'run_aster "$@"' bash "$@"
+}
+```
+
+This function allows you to run code_aster commands directly from your terminal without needing to specify the Docker command each time. You can use it like this:
+
+```bash
+run_aster calcul.export
+```
+
