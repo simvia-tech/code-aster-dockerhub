@@ -8,7 +8,7 @@ export default defineConfig({
 		starlight({
 			title: 'code_aster docker catalog',
 			social: [
-				{icon: "seti:docker", label:"dockerhub", href:"" },
+				{icon: "seti:docker", label:"dockerhub", href:"https://hub.docker.com/r/simvia/code_aster" },
 				{icon: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/company/simvia-tech/'}],
 			customCss: [
                         './public/css/global.css',
