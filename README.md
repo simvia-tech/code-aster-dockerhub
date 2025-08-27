@@ -1,54 +1,64 @@
-# Starlight Starter Kit: Basics
+# Code_Aster Documentation Site
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
-
-```
-npm create astro@latest -- --template starlight
-```
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/starlight/tree/main/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/starlight/tree/main/examples/basics)
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/withastro/starlight&create_from_path=examples/basics)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwithastro%2Fstarlight%2Ftree%2Fmain%2Fexamples%2Fbasics&project-name=my-starlight-docs&repository-name=my-starlight-docs)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+This project is a documentation website for code_aster docker version, built with [Astro](https://astro.build/) and [Starlight](https://starlight.astro.build/).
 
 ## 🚀 Project Structure
 
-Inside of your Astro + Starlight project, you'll see the following folders and files:
-
 ```
 .
-├── public/
+├── public/                  # Static assets (e.g., favicon, global CSS)
 ├── src/
-│   ├── assets/
+│   ├── assets/              # Images and other media for docs
 │   ├── content/
-│   │   └── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+│   │   └── docs/            # Documentation pages (.md, .mdx)
+│   └── content.config.ts    # Content collections config
+├── astro.config.mjs         # Astro configuration
+├── package.json             # Project metadata and scripts
+├── tsconfig.json            # TypeScript configuration
+└── README.md                # Project overview (this file)
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+- Documentation pages are located in [`src/content/docs/`](src/content/docs/).
+- Images can be placed in [`src/assets/`](src/assets/).
+- Static files (e.g., favicon) go in [`public/`](public/).
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+## 🧑‍💻 Getting Started
 
-Static assets, like favicons, can be placed in the `public/` directory.
+1. **Install dependencies:**
+   ```sh
+   npm install
+   ```
 
-## 🧞 Commands
+2. **Start the development server:**
+   ```sh
+   npm run dev
+   ```
+   The site will be available at [http://localhost:4321](http://localhost:4321).
 
-All commands are run from the root of the project, from a terminal:
+3. **Build for production:**
+   ```sh
+   npm run build
+   ```
 
-| Command                   | Action                                           |
+4. **Preview the production build:**
+   ```sh
+   npm run preview
+   ```
+
+## 🛠️ Useful Commands
+
+| Command                   | Description                                      |
 | :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm install`             | Install dependencies                             |
+| `npm run dev`             | Start local dev server at `localhost:4321`       |
 | `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run preview`         | Preview your build locally before deploying      |
+| `npm run astro ...`       | Run Astro CLI commands (e.g., `astro add`)       |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## 📚 Learn More
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+- [Starlight Documentation](https://starlight.astro.build/)
+- [Astro Documentation](https://docs.astro.build/)
+- [Astro Discord Community](https://astro.build/chat)
+
